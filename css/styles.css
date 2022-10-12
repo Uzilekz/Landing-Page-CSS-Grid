@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Urbanist', sans-serif;
+    user-select: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* HEADER */
+.header {
+    min-height: 100vh;
+    background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+    color: #fff;
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    grid-template-areas: "nav" "content";
+}
+
+/* HEADER__NAV */
+.header__nav {
+    display: grid;
+    justify-content: space-between;
+    grid-auto-flow: column;
+    gap: 1em;
+    align-items: center;
+    height: 90px;
+}
+.header__nav__logo {
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+.header__nav__links {
+    list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1em;
+}
+.header__nav__links__link {
+    color: #fff;
+    text-decoration: none;
+}
+.header__nav__menu {
+    display: none;
+}
+.header__nav__menu__img {
+    width: 30px;
+}
+
+/* HEADER__HERO */
+.header__hero {
+    grid-area: content;
+    display: grid;
+    gap: 2em;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding-bottom: 180px;
+}
+.header__hero__texts__title {
+    font-size: 2.6rem;
+    letter-spacing: 2px;
+}
+.header__hero__texts__subtitle {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+.header__hero__texts__link {
+    text-decoration: none;
+    color: #fff;
+    padding: 15px 70px;
+    border: 1px solid;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 500;
+    transition: background-color .3s;
+}
+.header__hero__texts__link:hover {
+    background-color: #fff;
+    color: #1e3c72;
+}
+.header__hero__gaming__img {
+    width: 100%;
+}
+.header__wave {
+    grid-area: content;
+    align-self: end;
+}
+
+@media (max-width: 800px) {
+    .header__nav__links {
+        display: none;
+    }
+    .header__nav__menu {
+        display: block;
+    }
+    .header__hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content max-content;
+        text-align: center;
+    }
+    .header__hero__gaming {
+        grid-row: 1 / 2;
+    }
+    .header__hero__gaming__img {
+        display: block;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
